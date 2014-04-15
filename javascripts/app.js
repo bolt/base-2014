@@ -2,7 +2,6 @@ $(document).ready(function() {
     $(document).foundation();
 });
 
-
 // Initialize the Fancybox shizzle, if present.
 if(jQuery().fancybox) {
     $('.fancybox, div.imageholder a').fancybox({ });
