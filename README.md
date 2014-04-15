@@ -11,6 +11,8 @@ Set `theme: base-2014` in your `config.yml`, and you're good to go!
 
 If you wish to use sass with your theme, be sure to checkout the 'Foundation' submodule, and start your favorite sass parser, for example 'compass'
 
-  git submodule init; git submodule update
-  compass watch
+```
+git submodule init; git submodule update
+compass watch
+```
   
