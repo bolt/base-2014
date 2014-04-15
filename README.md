@@ -14,5 +14,3 @@ If you wish to use sass with your theme, be sure to checkout the 'Foundation' su
   git submodule init; git submodule update
   compass watch
   
-  
-  
