@@ -14,6 +14,9 @@ If you wish to use sass with your theme, be sure to checkout the 'Foundation' su
 ```
 git submodule init
 git submodule update
+npm install
 grunt watch
 ```
   
+If you need some pointers to get started with grunt, I recommend thie link: 
+http://24ways.org/2013/grunt-is-not-weird-and-hard/
