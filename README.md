@@ -1,16 +1,17 @@
 base-2014
 =========
 
-This is thee base 2014 theme for Bolt. Built with Foundation 5 and Sass.
+This is the "base-2014" theme for Bolt. It is built with Foundation 5 and Sass, but you can use it
+as-is.
 
 To install manually, go to `theme/` and do a checkout: 
 
   git clone https://github.com/bolt/base-2014.git
 
-Set `theme: base-2014` in your `config.yml`, and you're good to go! 
+Set `theme: base-2014` in your `app/config/config.yml`, and you're good to go! 
 
-If you wish to use sass with your theme, be sure to checkout the 'Foundation'
-submodule, and start your favorite sass parser, for example 'grunt':
+If you wish to modify this theme using Sass, be sure to install the 'Foundation'
+bower module, and start your favorite Sass parser, for example 'grunt':
 
 ```
 bower install
