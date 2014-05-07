@@ -13,7 +13,7 @@ If you wish to use sass with your theme, be sure to checkout the 'Foundation'
 submodule, and start your favorite sass parser, for example 'grunt':
 
 ```
-bower install https://github.com/zurb/bower-foundation
+bower install
 npm install
 grunt watch
 ```
