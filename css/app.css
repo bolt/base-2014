@@ -131,7 +131,7 @@ div.imageholder {
     background-color: #FFF;
     border: 1px solid #BBBBBB;
     box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
-    padding: 4px 8px 12px;
+    padding: 4px;
     float: right;
     margin: 0 0 5px 5px;
 }

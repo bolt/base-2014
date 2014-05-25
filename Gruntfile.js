@@ -1,62 +1,34 @@
 module.exports = function(grunt) {
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
 
-    // 1. All configuration goes here 
-    grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-
-        /*
-        concat: {   
-            dist: {
-                src: [
-                    'javascripts/app.js', 
-                    'javascripts/foundation.min.js' 
-                ],
-                dest: 'javascripts/app.min.js',
-            }
-        }
-        */
-
-        /*
-        uglify: {
-            build: {
-                src: 'javascripts/app.js',
-                dest: 'javascripts/app.min.js'
-            }
+    sass: {
+      options: {
+        includePaths: ['bower_components/foundation/scss']
+      },
+      dist: {
+        options: {
+          outputStyle: 'compressed'
         },
-        */
-
-        watch: {
-            scripts: {
-                files: ['javascripts/*.js', 'stylesheets/*.scss'],
-                tasks: ['sass'],
-                options: {
-                    spawn: false,
-                },
-            } 
-        },        
-
-        sass: {
-            dist: {
-                options: {
-                    style: 'compressed'
-                },
-                files: {
-                    'stylesheets/foundation_test.css': 'stylesheets/foundation.scss'
-                }
-            } 
+        files: {
+          'css/foundation.css': 'scss/foundation.scss'
         }        
+      }
+    },
 
-    });
+    watch: {
+      grunt: { files: ['Gruntfile.js'] },
 
-    // 3. Where we tell Grunt we plan to use this plug-in.
-    //grunt.loadNpmTasks('grunt-contrib-concat');
-    //grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    // grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-sass');
+      sass: {
+        files: 'scss/**/*.scss',
+        tasks: ['sass']
+      }
+    }
+  });
 
+  grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
-    // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['sass']);
-
-};
+  grunt.registerTask('build', ['sass']);
+  grunt.registerTask('default', ['build','watch']);
+}

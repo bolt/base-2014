@@ -40,7 +40,10 @@
                    record contain, just use {{ print(home) }}, to print it all. #}
 
             {% else %}
-                <p>{{ __('Content for home not found!') }}. {{ __("You should set 'homepage:' in your 'app/config/config.yml' to an existing record.") }}</p>
+                <p>
+                    {{ __('Content for home not found!') }} 
+                    {{ __("You should set 'homepage:' in your 'app/config/config.yml' to an existing record.") }}
+                </p>
             {% endif %}
         </article>
 
