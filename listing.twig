@@ -21,8 +21,11 @@
                     {{ slug }}
                 {% endif %}
             </h1>
-            {# taxonomies are fetched unordered by design. If we specified an order in config.yml, sort them here: #}
-            {% set records = records|order(app.config.get('general/listing_sort')) %}
+            {# taxonomies are fetched unordered by design except if has_sortorder set true. #}
+            {%  if (not taxonomy.has_sortorder) %}
+                {# If we specified an order in config.yml, sort them here: #}
+                {% set records = records|order(app.config.get('general/listing_sort')) %}
+            {% endif %}
         {% endif %}
 
         {# This is also the default template for searchresults. If 'search' is defined,
@@ -58,7 +61,7 @@
                     <p>{{ record.excerpt(300) }}</p>
                 {% endif %}
 
-                {% include '_recordfooter.twig' with {record: record} %}
+                {% include '_recordfooter.twig' with {'record': record} %}
 
             </article>
 
@@ -76,11 +79,10 @@
 
                 {% else %}
 
-                    <h2>No content found.</h2>
+                    <h2>{{ __("No content found.") }}</h2>
 
                     <p>
-                        Unfortunately, no content could be found. Try another page, or go to the
-                        <a href="{{ paths.root }}">homepage</a>.
+                        {{ __("Unfortunately, no content could be found. Try another page, or go to the <a href=\"%paths_root%\">homepage</a>.", {'%paths_root%': paths.root} ) }}
                     </p>
 
                 {% endif %}
